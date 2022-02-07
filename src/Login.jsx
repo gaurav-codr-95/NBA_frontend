@@ -12,6 +12,7 @@ const Login = () => {
                 Login In
               </h5>
               <form>
+              
                 <div className="form-floating mb-3">
                   <input
                     type="email"
@@ -51,8 +52,11 @@ const Login = () => {
                     className="btn btn-danger btn-login text-uppercase fw-bold"
                     type="submit"
                   >
-                    Log in
-                  </button>
+                   <NavLink
+                      className="link-light fw-bold text-decoration-none"
+                      to="/Dashboard"
+                    >Log in</NavLink> 
+                  </button> 
                   <p>
                     Not Registered Yet?{" "}
                     <NavLink
