@@ -12,7 +12,6 @@ export class DisplayMidTerm2Co extends Component {
                             <th scope="col" className='col-2'>Subject Code</th>
                             <th scope="col" className='col-2'>Roll Number</th>
                             <th scope="col" className='col-2'>Total Marks</th>
-                            <th scope="col" className='col-2'>CO C</th>
                         </tr>
                     </thead>
                     <tbody>
