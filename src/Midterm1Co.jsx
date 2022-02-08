@@ -1,6 +1,6 @@
 import React from "react";
 
-const Forms = () => {
+const Midterm1Co = () => {
   return (
     <div className="container">
       <div className="row">
@@ -67,4 +67,4 @@ const Forms = () => {
   );
 };
 
-export default Forms;
+export default Midterm1Co;

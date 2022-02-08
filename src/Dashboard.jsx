@@ -3,14 +3,19 @@ import Header from './Header';
 import Main from './Main';
 import SideBar from './SideBar';
 
-class Dashboard extends Component {
-    render() {
-        return <div>
+export default function DashBoard() {
+    const [view,setView]=React.useState("")
+
+    const setComponent=(v)=>{
+        setView(v)
+      
+        }
+    
+        return ( <div>
             <Header/>
-            <SideBar />
-            <Main />
-        </div>;
-    }
+            <SideBar setComponent={setComponent}/>
+            {view}
+        </div>
+    )
 }
 
-export default Dashboard;

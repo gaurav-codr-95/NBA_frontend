@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Forms from './Forms';
+import Forms from './Midterm1Co';
 import DisplayStudent from './DisplayStudent';
 import DisplayMidTerm1Co from './DisplayMidTerm1Co';
 import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';

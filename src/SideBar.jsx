@@ -1,8 +1,30 @@
 import React, { Component } from "react";
+import './App.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from './Home';
+import Register from './Register';
+import Dashboard from './Dashboard';
+import Login from './Login';
+import Midterm1Co from './Midterm1Co';
+import Midterm1Marks from './Midterm1Marks';
+import Midterm2Co from './Midterm2Co';
+import Midterm2Marks from './Midterm2Marks';
+import Students from './Students';
 
-class SideBar extends Component {
-  render() {
-    return <>
+
+export default function SideBar(props) {
+
+
+  const handleClick = (v) => {
+    props.setComponent(v);
+  };
+
+  
+
+
+    return (
           <div className="container-fluid ">
         <div className="row">
           <nav
@@ -12,27 +34,27 @@ class SideBar extends Component {
             <div className="position-sticky pt-3">
               <ul className="nav flex-column">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="./Student.jsx">
+                  <a className="nav-link " aria-current="page" href="#" onClick={() => handleClick(<Students />)}>
                     Add Student
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="#">
+                  <a className="nav-link" aria-current="page" href="#" onClick={() => handleClick(<Midterm1Co />)}>
                     Add Mid Term 1 COS
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="#"  onClick={() => handleClick(<Midterm1Marks />)}>
                     Add Mid Term 1 Marks
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="#"  onClick={() => handleClick(<Midterm2Co />)}>
                     Add Mid Term 2 COS
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<Midterm2Marks />)}>
                     Add Mid Term 2 Marks
                   </a>
                 </li>
@@ -78,9 +100,8 @@ class SideBar extends Component {
           </nav>
         </div>
       </div>
-    </>
+    )
     
-  }
+  
 }
 
-export default SideBar;
