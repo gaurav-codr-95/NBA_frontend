@@ -67,7 +67,7 @@ export default function SideBar(props) {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <strong className="mx-3">Display Marks</strong>
+                      <strong>Display Marks</strong>
                     </a>
                     <ul
                       className="dropdown-menu text-small shadow"
@@ -75,21 +75,22 @@ export default function SideBar(props) {
                     >
                       <li>
                         <a className="dropdown-item" href="#">
-                          Student Details
-                        </a>
-                        <a className="dropdown-item" href="#">
-                          Mid Term - 1 CO Scheme
-                        </a>
-                        <a className="dropdown-item" href="#">
                           Mid Term - 1 Marks
                         </a>
                       </li>
                       <li>
                         <a className="dropdown-item" href="#">
-                          Mid Term - 2 CO Scheme
-                        </a>
-                        <a className="dropdown-item" href="#">
                           Mid Term - 2 Marks
+                        </a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Activity Marks
+                        </a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Assignment Marks
                         </a>
                       </li>
                     </ul>

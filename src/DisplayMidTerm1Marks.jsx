@@ -1,15 +1,54 @@
-import React, { Component } from 'react';
+import React, { useState,useEffect } from "react"
+import {getData,postData} from "./FetchNodeServices"
 
-export class DisplayMidTerm1Marks extends Component {
-  render() {
-    return <div>
-                return <div className='container'>
+const DisplayMidTerm1Marks = () => {
+
+    const [list,setList]=useState([])
+
+
+    const fetchAllStudent=async()=>{
+        var result = await getData("midterm1/displayallmidterm1_marks")
+        setList(result)
+        alert(JSON.stringify(result))
+
+        }
+    
+    useEffect(function(){
+            fetchAllStudent()
+            alert(1)
+    },[])
+    const filltable =()=>{
+        return list.map((item) => {
+            return (
+                <tr className='d-flex'>
+                        <th scope="row" className='col-1'>{item.subcode}</th>
+                        <td className='col-1'>{item.rollno}</td>
+                        <td className='col-1'>{item.mark_of_q1a}</td>
+                        <td className='col-1'>{item.mark_of_q1b}</td>
+                        <td className='col-1'>{item.mark_of_q1c}</td>
+                        <td className='col-1'>{item.mark_of_q1d}</td>
+                        <td className='col-1'>{item.mark_of_q1e}</td>
+                        <td className='col-1'>{item.mark_of_q2a}</td>
+                        <td className='col-1'>{item.mark_of_q2b}</td>
+                        <td className='col-1'>{item.mark_of_q2c}</td>
+                        <td className='col-1'>{item.mark_of_q3}</td>
+                        <td className='col-1'>{item.mark_of_q4}</td>
+                    </tr>
+
+            )
+        });
+    }
+
+
+    return( <div>
+             <div className='container'>
             <h4>Mid Term-1 Marks</h4>
             <div className="table-responsive">
             <table class="table table-hover table-dark">
                 <thead>
                     <tr className='d-flex'>
                         <th scope="col" className='col-1'>Subject Code</th>
+                        <th scope="col" className='col-1'>Roll no.</th>
                         <th scope="col" className='col-1'>Q1(A)</th>
                         <th scope="col" className='col-1'>Q1(B)</th>
                         <th scope="col" className='col-1'>Q1(C)</th>
@@ -23,64 +62,13 @@ export class DisplayMidTerm1Marks extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className='d-flex'>
-                        <th scope="row" className='col-1'>CS601</th>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>3</td>
-                        <td className='col-1'>6</td>
-                    </tr>
-                    <tr className='d-flex'>
-                        <th scope="row" className='col-1'>CS601</th>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>3</td>
-                        <td className='col-1'>6</td>
-                    </tr>
-                    <tr className='d-flex'>
-                        <th scope="row" className='col-1'>CS601</th>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>3</td>
-                        <td className='col-1'>6</td>
-                    </tr>
-                    <tr className='d-flex'>
-                        <th scope="row" className='col-1'>CS601</th>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>1</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>2</td>
-                        <td className='col-1'>3</td>
-                        <td className='col-1'>6</td>
-                    </tr>
+                                   {filltable()}
                 </tbody>
             </table>
             </div>
-        </div>;
-    </div>;
-  }
+        </div>
+    </div>
+    )
 }
 
 export default DisplayMidTerm1Marks;

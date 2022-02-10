@@ -1,7 +1,28 @@
-
-import React from "react";
+import React, { useState,useEffect } from "react"
+import {getData,postData} from "./FetchNodeServices"
 
 const Midterm2Marks = () => {
+
+  const [subjectCode,setSubjectCode]=useState('')
+  const [rollno,setRollno]=useState('')
+  const [totalMarks,setTotalMarks]=useState('')
+
+
+  const handleClick=async()=>{
+
+    var body = { subcode: subjectCode, rollno: rollno, totalmarks: totalMarks };
+
+    
+
+   
+    
+
+    var result = await postData('midterm2/addmidterm2_marks',body)
+    
+
+}
+
+
   return (
     <div className="container">
       <div className="row">
@@ -9,19 +30,19 @@ const Midterm2Marks = () => {
         <div class="mb-3">
         <h4 className="mb-2">Add Mid term - 2 Marks</h4>
           <label for="subjectCode" class="form-label">Subject Code</label>
-          <input type="text" class="form-control" id="subjectCode"/>
+          <input type="text" class="form-control" id="subjectCode" onChange={event=>setSubjectCode(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="roll_no" class="form-label">Roll No.</label>
-          <input type="text" class="form-control" id="roll_no"/>
+          <input type="text" class="form-control" id="roll_no" onChange={event=>setRollno(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="total_marks" class="form-label">Total Marks</label>
-          <input type="text" class="form-control" id="total_marks"/>
+          <input type="text" class="form-control" id="total_marks" onChange={event=>setTotalMarks(event.target.value)}/>
         </div>
         
         <div class="d-grid mb-4">
-        <button type="submit" class="btn btn-block btn-danger">Add</button>
+        <button type="submit" class="btn btn-block btn-danger" onClick={handleClick}>Add</button>
         </div>
       </form>
       </div>

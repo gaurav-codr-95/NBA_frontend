@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState,useEffect } from "react"
+import {getData,postData} from "./FetchNodeServices"
 
 const Midterm2Co = () => {
+
+  const [subjectCode,setSubjectCode]=useState('')
+  const [coa,setCoa]=useState('')
+  const [cob,setCob]=useState('')
+  const [coc,setCoc]=useState('')
+
+  const handleClick=async()=>{
+
+    var body = { subcode: subjectCode, co_a: coa, co_b: cob, co_c: coc };
+
+    
+
+   
+    
+
+    var result = await postData('midterm2/addmidterm2_co',body)
+    
+
+}
+
   return (
     <div className="container">
       <div className="row">
@@ -8,22 +29,22 @@ const Midterm2Co = () => {
         <div class="mb-3">
         <h4 className="mb-2">Add Mid term - 2 CO Scheme</h4>
           <label for="subjectCode" class="form-label">Subject Code</label>
-          <input type="text" class="form-control" id="subjectCode"/>
+          <input type="text" class="form-control" id="subjectCode" onChange={event=>setSubjectCode(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_A" class="form-label">CO A</label>
-          <input type="text" class="form-control" id="Co_A"/>
+          <input type="text" class="form-control" id="Co_A" onChange={event=>setCoa(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_B" class="form-label">CO B</label>
-          <input type="text" class="form-control" id="Co_B"/>
+          <input type="text" class="form-control" id="Co_B" onChange={event=>setCob(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_C" class="form-label">CO C</label>
-          <input type="text" class="form-control" id="Co_C"/>
+          <input type="text" class="form-control" id="Co_C" onChange={event=>setCoc(event.target.value)}/>
         </div>
         <div class="d-grid mb-4">
-        <button type="submit" class="btn btn-block btn-danger">Add</button>
+        <button type="submit" class="btn btn-block btn-danger" onClick={handleClick}>Add</button>
         </div>
       </form>
       </div>
