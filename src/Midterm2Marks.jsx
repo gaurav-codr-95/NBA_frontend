@@ -18,6 +18,14 @@ const Midterm2Marks = () => {
     
 
     var result = await postData('midterm2/addmidterm2_marks',body)
+
+    if(result){
+      alert("Midterm 2 Marks Added Successfully")
+      setSubjectCode('')
+      setRollno('')
+      setTotalMarks('')
+
+    }
     
 
 }
@@ -30,15 +38,15 @@ const Midterm2Marks = () => {
         <div class="mb-3">
         <h4 className="mb-2">Add Mid term - 2 Marks</h4>
           <label for="subjectCode" class="form-label">Subject Code</label>
-          <input type="text" class="form-control" id="subjectCode" onChange={event=>setSubjectCode(event.target.value)}/>
+          <input type="text" class="form-control" id="subjectCode" value={subjectCode} onChange={event=>setSubjectCode(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="roll_no" class="form-label">Roll No.</label>
-          <input type="text" class="form-control" id="roll_no" onChange={event=>setRollno(event.target.value)}/>
+          <input type="text" class="form-control" id="roll_no" value={rollno} onChange={event=>setRollno(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="total_marks" class="form-label">Total Marks</label>
-          <input type="text" class="form-control" id="total_marks" onChange={event=>setTotalMarks(event.target.value)}/>
+          <input type="text" class="form-control" id="total_marks" value={totalMarks} onChange={event=>setTotalMarks(event.target.value)}/>
         </div>
         
         <div class="d-grid mb-4">

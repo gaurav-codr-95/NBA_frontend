@@ -1,5 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=PT+Serif:ital@1&family=Playfair+Display&family=Roboto:wght@500&display=swap');
+
 
 body {
   margin: 0;
@@ -24,10 +26,10 @@ code {
   letter-spacing: 0.05rem;
   padding: 0.75rem 1rem;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap'); */
 
 *, body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -107,9 +109,7 @@ html, body {
     margin-left: 15%;
 }
 .table{
-    margin-left: 15%;
+    margin-left: 12%;
 }
 
-.table-responsive{
-    margin-left: 15%;
-}
+

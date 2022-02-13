@@ -12,6 +12,12 @@ import Midterm1Marks from './Midterm1Marks';
 import Midterm2Co from './Midterm2Co';
 import Midterm2Marks from './Midterm2Marks';
 import Students from './Students';
+import DisplayStudent from './DisplayStudent';
+import DisplayMidTerm1Co from './DisplayMidTerm1Co';
+import DisplayMidTerm2Marks from './DisplayMidTerm2Marks';
+import DisplayMidTerm2Co from './DisplayMidTerm2Co';
+import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';
+
 
 
 export default function SideBar(props) {
@@ -19,90 +25,86 @@ export default function SideBar(props) {
 
   const handleClick = (v) => {
     props.setComponent(v);
+    var header = document.getElementById("sidebarMenu");
+    var btns = header.getElementsByClassName("nav-link");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
   };
 
-  
 
 
-    return (
-          <div className="container-fluid ">
-        <div className="row">
-          <nav
-            id="sidebarMenu"
-            className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
-          >
-            <div className="position-sticky pt-3">
-              <ul className="nav flex-column">
-                <li className="nav-item">
-                  <a className="nav-link " aria-current="page" href="#" onClick={() => handleClick(<Students />)}>
-                    Add Student
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="#" onClick={() => handleClick(<Midterm1Co />)}>
-                    Add Mid Term 1 COS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#"  onClick={() => handleClick(<Midterm1Marks />)}>
-                    Add Mid Term 1 Marks
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#"  onClick={() => handleClick(<Midterm2Co />)}>
-                    Add Mid Term 2 COS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={() => handleClick(<Midterm2Marks />)}>
-                    Add Mid Term 2 Marks
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <div className="dropdown">
-                    <a
-                      href="#"
-                      className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-                      id="dropdownUser2"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <strong>Display Marks</strong>
-                    </a>
-                    <ul
-                      className="dropdown-menu text-small shadow"
-                      aria-labelledby="dropdownUser2"
-                    >
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Mid Term - 1 Marks
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Mid Term - 2 Marks
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Activity Marks
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Assignment Marks
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+
+  return (
+    <div className="container-fluid ">
+      <div className="row">
+        <nav
+          id="sidebarMenu"
+          className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+          <div className="position-sticky pt-3">
+            <ul className="nav flex-column">
+              <li className="nav-item">
+                <a className="nav-link " aria-current="page" href="#" onClick={() => handleClick(<Students />)}>
+                  Add Student
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#" onClick={() => handleClick(<Midterm1Co />)}>
+                  Add Mid Term 1 COS
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<Midterm1Marks />)}>
+                  Add Mid Term 1 Marks
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<Midterm2Co />)}>
+                  Add Mid Term 2 COS
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<Midterm2Marks />)}>
+                  Add Mid Term 2 Marks
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayStudent />)}>
+                  Display All Students
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidTerm1Marks />)}>
+                  Display Mid Term 1 Marks
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidTerm2Marks />)}>
+                  Display Mid Term 2 Marks
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidTerm1Co />)}>
+                  Display Mid Term 1 Co
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidTerm2Co />)}>
+                  Display Mid Term 2 Co
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    )
-    
-  
+    </div>
+  )
+
+
 }
 

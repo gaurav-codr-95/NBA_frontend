@@ -48,7 +48,6 @@ const DisplayMidTerm1Co = () => {
     return( <div>
          <div className='container'>
             <h4>Mid Term 1 CO Scheme</h4>
-            <div className="table-responsive">
             <table class="table table-hover table-dark">
                 <thead>
                     <tr className='d-flex'>
@@ -71,7 +70,7 @@ const DisplayMidTerm1Co = () => {
             </table>
             </div>
         </div>
-    </div>
+
     )
 }
 

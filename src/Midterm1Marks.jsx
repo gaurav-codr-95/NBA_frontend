@@ -27,6 +27,23 @@ const Midterm1Marks = () => {
     
 
     var result = await postData('midterm1/addmidterm1_marks',body)
+
+    if(result){
+      alert("Midterm 1 Marks Added Successfully")
+      setSubjectCode('')
+      setRollno('')
+      setMarkOfQ1a('')
+      setMarkOfQ1b('')
+      setMarkOfQ1c('')
+      setMarkOfQ1d('')
+      setMarkOfQ1e('')
+      setMarkOfQ2a('')
+      setMarkOfQ2b('')
+      setMarkOfQ2c('')
+      setMarkOfQ3('')
+      setMarkOfQ4('')
+
+    }
     
 
 }
@@ -38,51 +55,51 @@ const Midterm1Marks = () => {
         <div class="mb-3">
         <h4 className="mb-2">Add Mid term - 1 Marks</h4>
           <label for="subjectCode" class="form-label">Subject Code</label>
-          <input type="text" class="form-control" id="subjectCode" onChange={event=>setSubjectCode(event.target.value)}/>
+          <input type="text" class="form-control" id="subjectCode" value={subjectCode} onChange={event=>setSubjectCode(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q1A" class="form-label">Student Rollno</label>
-          <input type="text" class="form-control" id="Marks_Q1A" onChange={event=>setRollno(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q1A" value={rollno} onChange={event=>setRollno(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q1A" class="form-label">Marks of Q1(A)</label>
-          <input type="text" class="form-control" id="Marks_Q1A" onChange={event=>setMarkOfQ1a(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q1A" value={markOfQ1a} onChange={event=>setMarkOfQ1a(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q1B" class="form-label">Marks of Q1(B)</label>
-          <input type="text" class="form-control" id="Marks_Q1B" onChange={event=>setMarkOfQ1b(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q1B" value={markOfQ1b} onChange={event=>setMarkOfQ1b(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q1C" class="form-label">Marks of Q1(C)</label>
-          <input type="text" class="form-control" id="Marks_Q1C" onChange={event=>setMarkOfQ1c(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q1C" value={markOfQ1c} onChange={event=>setMarkOfQ1c(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q1D" class="form-label">Marks of Q1(D)</label>
-          <input type="text" class="form-control" id="Marks_Q1D" onChange={event=>setMarkOfQ1d(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q1D" value={markOfQ1d} onChange={event=>setMarkOfQ1d(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q1E" class="form-label">Marks of Q1(E)</label>
-          <input type="text" class="form-control" id="Marks_Q1E" onChange={event=>setMarkOfQ1e(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q1E" value={markOfQ1e} onChange={event=>setMarkOfQ1e(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q2A" class="form-label">Marks of Q2(A)</label>
-          <input type="text" class="form-control" id="Marks_Q2A" onChange={event=>setMarkOfQ2a(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q2A" value={markOfQ2a} onChange={event=>setMarkOfQ2a(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q2B" class="form-label">Marks of Q2(B)</label>
-          <input type="text" class="form-control" id="Marks_Q2B" onChange={event=>setMarkOfQ2b(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q2B" value={markOfQ2b} onChange={event=>setMarkOfQ2b(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q2C" class="form-label">Marks of Q2(C)</label>
-          <input type="text" class="form-control" id="Marks_Q2C" onChange={event=>setMarkOfQ2c(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q2C" value={markOfQ2c} onChange={event=>setMarkOfQ2c(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q3A" class="form-label">Marks of Q3</label>
-          <input type="text" class="form-control" id="Marks_Q3A" onChange={event=>setMarkOfQ3(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q3A" value={markOfQ3} onChange={event=>setMarkOfQ3(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Q3B" class="form-label">Marks of Q4</label>
-          <input type="text" class="form-control" id="Marks_Q3B" onChange={event=>setMarkOfQ4(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Q3B" value={markOfQ4} onChange={event=>setMarkOfQ4(event.target.value)}/>
         </div>
         
         <div class="d-grid mb-4">

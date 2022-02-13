@@ -27,6 +27,21 @@ const Midterm1Co = () => {
     
 
     var result = await postData('midterm1/addmidterm1_co',body)
+
+    if(result){
+      alert('Midterm 1 Co Added Successfully')
+      setSubjectCode('')
+      setCoOfQ1a('')
+      setCoOfQ1b('')
+      setCoOfQ1c('')
+      setCoOfQ1d('')
+      setCoOfQ1e('')
+      setCoOfQ2a('')
+      setCoOfQ2b('')
+      setCoOfQ2c('')
+      setCoOfQ3('')
+      setCoOfQ4('')
+    }
     
 
 }
@@ -38,47 +53,47 @@ const Midterm1Co = () => {
         <div class="mb-3">
         <h4 className="mb-2">Add Mid term 1 CO Scheme</h4>
           <label for="subjectCode" class="form-label">Subject Code</label>
-          <input type="text" class="form-control" id="subjectCode" onChange={event=>setSubjectCode(event.target.value)}/>
+          <input type="text" class="form-control" id="subjectCode" value={subjectCode} onChange={event=>setSubjectCode(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q1A" class="form-label">CO of Q1(A)</label>
-          <input type="text" class="form-control" id="Co_Q1A" onChange={event=>setCoOfQ1a(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q1A" value={coOfQ1a} onChange={event=>setCoOfQ1a(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q1B" class="form-label">CO of Q1(B)</label>
-          <input type="text" class="form-control" id="Co_Q1B" onChange={event=>setCoOfQ1b(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q1B" value={coOfQ1b} onChange={event=>setCoOfQ1b(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q1C" class="form-label">CO of Q1(C)</label>
-          <input type="text" class="form-control" id="Co_Q1C" onChange={event=>setCoOfQ1c(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q1C" value={coOfQ1c} onChange={event=>setCoOfQ1c(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q1D" class="form-label">CO of Q1(D)</label>
-          <input type="text" class="form-control" id="Co_Q1D" onChange={event=>setCoOfQ1d(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q1D" value={coOfQ1d} onChange={event=>setCoOfQ1d(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q1E" class="form-label">CO of Q1(E)</label>
-          <input type="text" class="form-control" id="Co_Q1E" onChange={event=>setCoOfQ1e(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q1E" value={coOfQ1e} onChange={event=>setCoOfQ1e(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q2A" class="form-label">CO of Q2(A)</label>
-          <input type="text" class="form-control" id="Co_Q2A" onChange={event=>setCoOfQ2a(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q2A" value={coOfQ2a} onChange={event=>setCoOfQ2a(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q2B" class="form-label">CO of Q2(B)</label>
-          <input type="text" class="form-control" id="Co_Q2B" onChange={event=>setCoOfQ2b(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q2B" value={coOfQ2b} onChange={event=>setCoOfQ2b(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q2C" class="form-label">CO of Q2(C)</label>
-          <input type="text" class="form-control" id="Co_Q2C" onChange={event=>setCoOfQ2c(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q2C" value={coOfQ2c} onChange={event=>setCoOfQ2c(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q3A" class="form-label">CO of Q3</label>
-          <input type="text" class="form-control" id="Co_Q3A" onChange={event=>setCoOfQ3(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q3A" value={coOfQ3} onChange={event=>setCoOfQ3(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Co_Q3B" class="form-label">CO of Q4</label>
-          <input type="text" class="form-control" id="Co_Q3B" onChange={event=>setCoOfQ4(event.target.value)}/>
+          <input type="text" class="form-control" id="Co_Q3B" value={coOfQ4} onChange={event=>setCoOfQ4(event.target.value)}/>
         </div>
         
         <div class="d-grid mb-4">
