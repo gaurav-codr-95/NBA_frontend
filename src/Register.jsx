@@ -39,7 +39,7 @@ const Register = () => {
                   >
                     Register
                   </button>
-                  <p>
+                  <p className="mt-2">
                     All Ready Registered{" "}
                     <NavLink
                       className="link-success fw-bold text-decoration-none"

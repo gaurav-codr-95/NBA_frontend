@@ -57,7 +57,7 @@ const Login = () => {
                       to="/Dashboard"
                     >Log in</NavLink> 
                   </button> 
-                  <p>
+                  <p className="mt-2">
                     Not Registered Yet?{" "}
                     <NavLink
                       className="link-success fw-bold text-decoration-none"

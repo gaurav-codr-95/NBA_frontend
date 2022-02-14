@@ -109,7 +109,14 @@ html, body {
     margin-left: 15%;
 }
 .table{
+    width:70vw;
     margin-left: 12%;
+    justify-content: center;
 }
+
+.container .row h4{
+    margin-left: 33%;
+}
+
 
 

@@ -12,6 +12,8 @@ import Midterm1Marks from './Midterm1Marks';
 import Midterm2co from './Midterm2Co';
 import Midterm2Marks from './Midterm2Marks';
 import Students from './Students';
+import ActivityCo from './ActivityCo';
+import ActivityMarks from './ActivityMarks';
 import DisplayStudent from './DisplayStudent';
 import DisplayMidTerm1Co from './DisplayMidTerm1Co';
 import DisplayMidTerm2Marks from './DisplayMidTerm2Marks';
@@ -26,134 +28,150 @@ import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';
 
 
 function App(props) {
-    return (
-      <div>
-        <Router>
-          <Route
-      strict
-      exact
-      component={Home}
-      path="/home"
-      history={props.history}
-      />
-  
-          <Route
-            strict
-            exact
-            component={Login}
-            path="/login"
-            history={props.history}
-          />
+  return (
+    <div>
+      <Router>
+        <Route
+          strict
+          exact
+          component={Home}
+          path="/home"
+          history={props.history}
+        />
 
-          <Route
-            strict
-            exact
-            component={Students}
-            path="/students"
-            history={props.history}
-          />
-  
-          <Route
-            strict
-            exact
-            component={Dashboard}
-            path="/dashboard"
-            history={props.history}
-          />
-  
-       <Route
-            strict
-            exact
-            component={Register}
-            path="/register"
-            history={props.history}
-          />
-  
-  
-  <Route
-            strict
-            exact
-            component={Midterm1Marks}
-            path="/midterm1marks"
-            history={props.history}
-          />
-  
-      <Route
-            strict
-            exact
-            component={Midterm1Co}
-            path="/midterm1co"
-            history={props.history}
-          />
-  
-       <Route
-            strict
-            exact
-            component={Midterm2Marks}
-            path="/midterm2marks"
-            history={props.history}
-          />
-  
-      <Route
-            strict
-            exact
-            component={Midterm2co}
-            path="/midterm2co"
-            history={props.history}
-          />
+        <Route
+          strict
+          exact
+          component={Login}
+          path="/login"
+          history={props.history}
+        />
 
-      <Route
-            strict
-            exact
-            component={DisplayStudent}
-            path="/displaystudent"
-            history={props.history}
-          />
+        <Route
+          strict
+          exact
+          component={Students}
+          path="/students"
+          history={props.history}
+        />
 
-      <Route
-            strict
-            exact
-            component={DisplayMidTerm1Co}
-            path="/displaymidterm1co"
-            history={props.history}
-          />
+        <Route
+          strict
+          exact
+          component={Dashboard}
+          path="/dashboard"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={Register}
+          path="/register"
+          history={props.history}
+        />
 
 
-     <Route
-            strict
-            exact
-            component={DisplayMidTerm1Marks}
-            path="/displaymidterm1marks"
-            history={props.history}
-          />
+        <Route
+          strict
+          exact
+          component={Midterm1Marks}
+          path="/midterm1marks"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={Midterm1Co}
+          path="/midterm1co"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={Midterm2Marks}
+          path="/midterm2marks"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={Midterm2co}
+          path="/midterm2co"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={ActivityCo}
+          path="/activityco"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={ActivityMarks}
+          path="/activitymarks"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={DisplayStudent}
+          path="/displaystudent"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={DisplayMidTerm1Co}
+          path="/displaymidterm1co"
+          history={props.history}
+        />
 
 
-     <Route
-            strict
-            exact
-            component={DisplayMidTerm2Co}
-            path="/displaymidterm2co"
-            history={props.history}
-          />
+        <Route
+          strict
+          exact
+          component={DisplayMidTerm1Marks}
+          path="/displaymidterm1marks"
+          history={props.history}
+        />
 
 
-     <Route
-            strict
-            exact
-            component={DisplayMidTerm2Marks}
-            path="/displaymidterm2marks"
-            history={props.history}
-          />
-  
-     
-  
-        </Router>
-      </div>
-    );
-  }
-  
-  export default App;
-  
+        <Route
+          strict
+          exact
+          component={DisplayMidTerm2Co}
+          path="/displaymidterm2co"
+          history={props.history}
+        />
+
+
+        <Route
+          strict
+          exact
+          component={DisplayMidTerm2Marks}
+          path="/displaymidterm2marks"
+          history={props.history}
+        />
+
+
+
+      </Router>
+    </div>
+  );
+}
+
+export default App;
+
 
 
 
