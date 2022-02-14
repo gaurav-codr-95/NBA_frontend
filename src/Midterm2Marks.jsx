@@ -37,6 +37,7 @@ const Midterm2Marks = () => {
       <form className="col-sm-9 col-md-7 mx-auto">
         <div class="mb-3">
         <h4 className="mb-2">Add Mid term - 2 Marks</h4>
+        <hr />
           <label for="subjectCode" class="form-label">Subject Code</label>
           <input type="text" class="form-control" id="subjectCode" value={subjectCode} onChange={event=>setSubjectCode(event.target.value)}/>
         </div>

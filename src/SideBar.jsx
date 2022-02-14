@@ -12,6 +12,8 @@ import Midterm1Marks from './Midterm1Marks';
 import Midterm2Co from './Midterm2Co';
 import Midterm2Marks from './Midterm2Marks';
 import Students from './Students';
+import ActivityCo from './ActivityCo';
+import ActivityMarks from './ActivityMarks';
 import DisplayStudent from './DisplayStudent';
 import DisplayMidTerm1Co from './DisplayMidTerm1Co';
 import DisplayMidTerm2Marks from './DisplayMidTerm2Marks';
@@ -73,6 +75,18 @@ export default function SideBar(props) {
                   Add Mid Term 2 Marks
                 </a>
               </li>
+              <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<ActivityCo />)}>
+                    Add Activity CO's
+                  </a>
+                </li>
+
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<ActivityMarks />)}>
+                    Add Activity Marks
+                  </a>
+                </li>
+
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={() => handleClick(<DisplayStudent />)}>
                   Display All Students

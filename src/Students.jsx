@@ -39,6 +39,7 @@ const Students = () => {
       <form className="col-sm-9 col-md-7 mx-auto">
         <div class="mb-3">
         <h4 className="mb-2">Add Students</h4>
+        <hr />
           <label for="rollno" class="form-label">Roll No.</label>
           <input type="text" class="form-control" value={rollno} id="rollno" onChange={event=>setRollno(event.target.value)}/>
         </div>
