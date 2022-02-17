@@ -19,6 +19,9 @@ import DisplayMidTerm1Co from './DisplayMidTerm1Co';
 import DisplayMidTerm2Marks from './DisplayMidTerm2Marks';
 import DisplayMidTerm2Co from './DisplayMidTerm2Co';
 import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';
+import Quiz_co from './Quiz_co';
+import Quiz_Marks from './Quiz_Marks';
+
 
 
 
@@ -162,6 +165,22 @@ function App(props) {
           path="/displaymidterm2marks"
           history={props.history}
         />
+            
+        <Route
+            strict
+            exact
+            component={Quiz_co}
+            path="/Quiz_co"
+            history={props.history}
+          />
+      <Route
+            strict
+            exact
+            component={Quiz_Marks}
+            path="/Quiz_Marks"
+            history={props.history}
+          />
+
 
 
 

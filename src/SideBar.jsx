@@ -19,6 +19,9 @@ import DisplayMidTerm1Co from './DisplayMidTerm1Co';
 import DisplayMidTerm2Marks from './DisplayMidTerm2Marks';
 import DisplayMidTerm2Co from './DisplayMidTerm2Co';
 import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';
+import Quiz_co from './Quiz_co';
+import Quiz_Marks from './Quiz_Marks';
+
 
 
 
@@ -112,6 +115,17 @@ export default function SideBar(props) {
                   Display Mid Term 2 Co
                 </a>
               </li>
+             <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<Quiz_co />)}>
+                    Quiz Co
+                  </a>
+                </li>
+             <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<Quiz_Marks />)}>
+                    Quiz Marks
+                  </a>
+                </li>
+
             </ul>
           </div>
         </nav>
