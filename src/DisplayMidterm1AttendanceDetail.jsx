@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { getData, postData } from "./FetchNodeServices";
 
-const DisplayMidTerm1Marks = () => {
+const DisplayMidTerm1AttendanceDetail = () => {
   const [list, setList] = useState([]);
 
   const fetchAllStudent = async () => {
-    const result = await getData("midterm1/displayallmidterm1_marks");
+    const result = await getData("extras/displaymidterm1attendance");
     setList(result);
-    alert(JSON.stringify(result));
   };
 
   useEffect(function () {
@@ -15,13 +14,12 @@ const DisplayMidTerm1Marks = () => {
   }, []);
 
   const filltable = () => {
-    return list.map((item) => {
+    return list?.map((item) => {
       return (
         <tr className="d-flex">
           <th scope="row" className="col-1">
             {item.subcode}
           </th>
-          <td className="col-1">{item.rollno}</td>
           <td className="col-1">{item.mark_of_q1a}</td>
           <td className="col-1">{item.mark_of_q1b}</td>
           <td className="col-1">{item.mark_of_q1c}</td>
@@ -40,15 +38,12 @@ const DisplayMidTerm1Marks = () => {
   return (
     <div>
       <div className="container">
-        <h4>Mid Term-1 Marks</h4>
+        <h4>Mid Term-1 Questions Attempted by students</h4>
         <table class="table table-hover table-dark">
           <thead>
             <tr className="d-flex">
               <th scope="col" className="col-1">
                 Subject Code
-              </th>
-              <th scope="col" className="col-1">
-                Roll no.
               </th>
               <th scope="col" className="col-1">
                 Q1(A)
@@ -89,4 +84,4 @@ const DisplayMidTerm1Marks = () => {
   );
 };
 
-export default DisplayMidTerm1Marks;
+export default DisplayMidTerm1AttendanceDetail;

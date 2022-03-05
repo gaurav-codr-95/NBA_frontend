@@ -20,7 +20,7 @@ const ActivityMarks = () => {
      
       
   
-      var result = await postData('activity/addactivity_mark',body)
+      var result = await postData('activity/addactivity_marks',body)
 }
     return (
         <div className="container">

@@ -5,30 +5,23 @@ const Quiz_Marks = () => {
 
   const [subjectCode,setSubjectCode]=useState('')
   const [rollno,setRollno]=useState('')
-  const [markOfQ1a,setMarkOfQ1a]=useState('')
-  const [markOfQ1b,setMarkOfQ1b]=useState('')
-  const [markOfQ1c,setMarkOfQ1c]=useState('')
-  const [markOfQ1d,setMarkOfQ1d]=useState('')
-  const [markOfQ1e,setMarkOfQ1e]=useState('')
-  const [markOfQ2a,setMarkOfQ2a]=useState('')
-  const [markOfQ2b,setMarkOfQ2b]=useState('')
-  const [markOfQ2c,setMarkOfQ2c]=useState('')
-  const [markOfQ3,setMarkOfQ3]=useState('')
-  const [markOfQ4,setMarkOfQ4]=useState('')
+  const [markOfQ1,setMarkOfQ1]=useState('')
+  const [markOfQ2,setMarkOfQ2]=useState('')
+  
 
 
   const handleClick=async()=>{
 
-    var body = { subcode: subjectCode , rollno: rollno, mark_of_q1a: markOfQ1a, mark_of_q1b: markOfQ1b, mark_of_q1c: markOfQ1c, mark_of_q1d: markOfQ1d, mark_of_q1e: markOfQ1e, mark_of_q2a: markOfQ2a, mark_of_q2b: markOfQ2b, mark_of_q2c: markOfQ2c, mark_of_q3: markOfQ3, mark_of_q4: markOfQ4 };
+    var body = { subcode: subjectCode , rollno: rollno, mark_of_q1: markOfQ1, mark_of_q2: markOfQ2};
 
     
 
    
     
 
-    var result = await postData('midterm1/addmidterm1_marks',body)
+    var result = await postData('quiz/addquiz_marks',body)
     
-
+    
 }
 
   return (
@@ -46,11 +39,11 @@ const Quiz_Marks = () => {
         </div>
         <div class="mb-3">
           <label for="Marks_Quiz-1" class="form-label">Marks of Quiz-1</label>
-          <input type="text" class="form-control" id="Marks_Quiz-1" onChange={event=>setMarkOfQ1a(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Quiz-1" onChange={event=>setMarkOfQ1(event.target.value)}/>
         </div>
         <div class="mb-3">
           <label for="Marks_Quiz-2" class="form-label">Marks of Quiz-2</label>
-          <input type="text" class="form-control" id="Marks_Quiz-2" onChange={event=>setMarkOfQ1b(event.target.value)}/>
+          <input type="text" class="form-control" id="Marks_Quiz-2" onChange={event=>setMarkOfQ2(event.target.value)}/>
         </div>
         
         <div class="d-grid mb-4">

@@ -21,6 +21,16 @@ import DisplayMidTerm2Co from './DisplayMidTerm2Co';
 import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';
 import Quiz_co from './Quiz_co';
 import Quiz_Marks from './Quiz_Marks';
+import DisplayActivityCo from './DisplayActivityCo';
+import DisplayActivityMarks from './DisplayActivityMarks';
+import DisplayQuizCo from './DisplayQuizCo';
+import DisplayQuizMarks from './DisplayQuizMarks';
+import DisplayMidterm1Attendance from './DisplayMidterm1Attendance';
+import DisplayMidterm2Attendance from './DisplayMidterm2Attendance';
+import DisplayMidterm1AttendanceDetail from './DisplayMidterm1AttendanceDetail';
+import DisplayMidterm1AttendanceDetail60 from './DisplayMidterm1AttendanceDetail60';
+import DisplayActivityAttendance from './DisplayActivityAttendance';
+
 
 
 
@@ -90,6 +100,20 @@ export default function SideBar(props) {
                   </a>
                 </li>
 
+
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<Quiz_co />)}>
+                   Add Quiz Co
+                  </a>
+                </li>
+             <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => handleClick(<Quiz_Marks />)}>
+                   Add Quiz Marks
+                  </a>
+                </li>
+
+                
+
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={() => handleClick(<DisplayStudent />)}>
                   Display All Students
@@ -115,16 +139,57 @@ export default function SideBar(props) {
                   Display Mid Term 2 Co
                 </a>
               </li>
-             <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={() => handleClick(<Quiz_co />)}>
-                    Quiz Co
-                  </a>
-                </li>
-             <li className="nav-item">
-                  <a className="nav-link" href="#" onClick={() => handleClick(<Quiz_Marks />)}>
-                    Quiz Marks
-                  </a>
-                </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayActivityCo />)}>
+                  Display Activity Co
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayActivityMarks />)}>
+                  Display Activity Marks
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayQuizCo />)}>
+                  Display Quiz Co
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayQuizMarks />)}>
+                  Display Quiz Marks
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidterm1Attendance />)}>
+                  Display Midterm1 Attendance
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidterm2Attendance />)}>
+                  Display Midterm2 Attendance
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidterm1AttendanceDetail />)}>
+                  Display Midterm1 Attendance Detail
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidterm1AttendanceDetail60 />)}>
+                  Display Midterm1 Attendance Detail 60%
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayActivityAttendance />)}>
+                  Display Activity Attendance 
+                </a>
+              </li>
+              
+             
 
             </ul>
           </div>

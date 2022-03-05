@@ -21,6 +21,16 @@ import DisplayMidTerm2Co from './DisplayMidTerm2Co';
 import DisplayMidTerm1Marks from './DisplayMidTerm1Marks';
 import Quiz_co from './Quiz_co';
 import Quiz_Marks from './Quiz_Marks';
+import DisplayActivityCo from './DisplayActivityCo';
+import DisplayActivityMarks from './DisplayActivityMarks';
+import DisplayQuizCo from './DisplayQuizCo';
+import DisplayQuizMarks from './DisplayQuizMarks';
+import DisplayMidterm1Attendance from './DisplayMidterm1Attendance';
+import DisplayMidterm2Attendance from './DisplayMidterm2Attendance';
+import DisplayMidterm1AttendanceDetail from './DisplayMidterm1AttendanceDetail';
+import DisplayMidterm1AttendanceDetail60 from './DisplayMidterm1AttendanceDetail60';
+import DisplayActivityAttendance from './DisplayActivityAttendance';
+
 
 
 
@@ -165,6 +175,41 @@ function App(props) {
           path="/displaymidterm2marks"
           history={props.history}
         />
+
+
+        <Route
+          strict
+          exact
+          component={DisplayActivityCo}
+          path="/displayactivityco"
+          history={props.history}
+        />
+
+        <Route
+          strict
+          exact
+          component={DisplayQuizCo}
+          path="/displayquizco"
+          history={props.history}
+        />
+
+
+        <Route 
+          strict
+          exact
+          component={DisplayActivityMarks}
+          path="/displayactivitymarks"
+          history={props.history}
+        />
+
+
+        <Route
+          strict
+          exact
+          component={DisplayQuizMarks}
+          path="/displayquizmarks"
+          history={props.history}
+        />
             
         <Route
             strict
@@ -178,6 +223,48 @@ function App(props) {
             exact
             component={Quiz_Marks}
             path="/Quiz_Marks"
+            history={props.history}
+          />
+
+
+       <Route
+            strict
+            exact
+            component={DisplayMidterm1Attendance}
+            path="/displaymidterm1attendance"
+            history={props.history}
+          />
+
+        <Route
+            strict
+            exact
+            component={DisplayMidterm1Attendance}
+            path="/displaymidterm1attendance"
+            history={props.history}
+          />
+
+        <Route
+            strict
+            exact
+            component={DisplayMidterm1AttendanceDetail}
+            path="/displaymidterm1attendancedetail"
+            history={props.history}
+          />
+
+
+        <Route
+            strict
+            exact
+            component={DisplayMidterm1AttendanceDetail60}
+            path="/displaymidterm1attendancedetail60"
+            history={props.history}
+          />
+
+        <Route
+            strict
+            exact
+            component={DisplayActivityAttendance}
+            path="/displayactivityattendance"
             history={props.history}
           />
 
