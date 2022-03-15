@@ -59,7 +59,7 @@ export default function SideBar(props) {
       <div className="row">
         <nav
           id="sidebarMenu"
-          className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+          className="col-md-3 col-lg-2 d-md-block bg-light sidebar"
         >
           <div className="position-sticky pt-3">
             <ul className="nav flex-column">

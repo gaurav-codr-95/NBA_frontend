@@ -12,9 +12,13 @@ export default function DashBoard() {
         }
     
         return ( <div>
-            <Header/>
-            <SideBar setComponent={setComponent}/>
+            <Header/> <div className="row">
+        <div className="column1">
+            <SideBar setComponent={setComponent}/></div>
+            <div className="column2">
             {view}
+            </div>
+            </div>
         </div>
     )
 }
