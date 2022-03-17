@@ -3,21 +3,29 @@ import {getData,postData} from "./FetchNodeServices"
 
 const DisplayActivityMark = () => {
     const [list,setList]=useState([])
+    const [search,setSearch]=useState("")
+
 
 
     const fetchAllActivity=async()=>{
         var result = await getData("activity/displayallactivity_marks")
         setList(result)
-        alert(JSON.stringify(result))
+        // alert(JSON.stringify(result))
 
         }
     
     useEffect(function(){
             fetchAllActivity()
-            alert(1)
+            // alert(1)
     },[])
     const filltable =()=>{
-        return list.map((item) => {
+        return list.filter((val)=>{
+            if(search===""){
+                return val 
+            }else if (val.subcode.toLowerCase().includes(search.toLowerCase()) || val.rollno.toLowerCase().includes(search.toLowerCase())  ){
+                return val
+            }
+        }).map((item) => {
             return (
                 <tr className='d-flex'>
                             <th scope="row" className='col-2'>{item.subcode}</th>
@@ -34,6 +42,8 @@ const DisplayActivityMark = () => {
     return( <div>
                    <div className='container'>
                 <h4>Marks of Activity</h4>
+                <input class="form-control search" type="text" placeholder="Search...." aria-label="Search a record" onChange={event=>{setSearch(event.target.value)}}></input>
+
                 <table class="table table-hover table-dark">
                     <thead>
                         <tr className='d-flex'>

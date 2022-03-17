@@ -5,6 +5,8 @@ const DisplayMidTerm2Marks = () => {
 
 
     const [list,setList]=useState([])
+    const [search,setSearch]=useState("")
+
 
 
     const fetchAllMidterm2marks=async()=>{
@@ -19,7 +21,13 @@ const DisplayMidTerm2Marks = () => {
             alert(1)
     },[])
     const filltable =()=>{
-        return list.map((item) => {
+        return list.filter((val)=>{
+            if(search===""){
+                return val 
+            }else if (val.subcode.toLowerCase().includes(search.toLowerCase()) || val.rollno.toLowerCase().includes(search.toLowerCase()) || val.totalmarks.toString().toLowerCase().includes(search.toLowerCase())  ){
+                return val
+            }
+        }).map((item) => {
             return (
                 <tr className='d-flex'>
                             <th scope="row" className='col-2'>{item.subcode}</th>
@@ -32,6 +40,8 @@ const DisplayMidTerm2Marks = () => {
         return( <div>
             <div className='container'>
                 <h4>Mid Term-2 Marks</h4>
+                <input class="form-control search" type="text" placeholder="Search...." aria-label="Search a record" onChange={event=>{setSearch(event.target.value)}}></input>
+
                 <table class="table table-hover table-dark">
                     <thead>
                         <tr className='d-flex'>

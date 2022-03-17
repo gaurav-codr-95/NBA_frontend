@@ -3,6 +3,8 @@ import { getData, postData } from "./FetchNodeServices";
 
 const DisplayActivityAttendance = () => {
   const [list, setList] = useState([]);
+  const [search,setSearch]=useState("")
+
 
   const fetchAllStudent = async () => {
     const result = await getData("extras/displayactivityattendance");
@@ -14,7 +16,13 @@ const DisplayActivityAttendance = () => {
   }, []);
 
   const filltable = () => {
-    return list?.map((item) => {
+    return list.filter((val)=>{
+      if(search===""){
+          return val 
+      }else if (val.subcode.toLowerCase().includes(search.toLowerCase())  ){
+          return val
+      }
+  }).map((item) => {
       return (
         <tr className="d-flex">
           <th scope="row" className="col-1">
@@ -31,6 +39,7 @@ const DisplayActivityAttendance = () => {
 
   return (
     <div>
+       <input class="form-control search" type="text" placeholder="Search...." aria-label="Search a record" onChange={event=>{setSearch(event.target.value)}}></input>
       <div className="container">
         <h4>Mid Term-1 Questions Attempted by students</h4>
         <table class="table table-hover table-dark">

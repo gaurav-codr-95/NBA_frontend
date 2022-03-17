@@ -3,6 +3,8 @@ import { getData, postData } from "./FetchNodeServices";
 
 const DisplayMidTerm1AttendanceDetail60 = () => {
   const [list, setList] = useState([]);
+  const [search,setSearch]=useState("")
+
 
   const fetchAllStudent = async () => {
     const result = await getData("extras/displaymidterm1attendance60");
@@ -14,7 +16,13 @@ const DisplayMidTerm1AttendanceDetail60 = () => {
   }, []);
 
   const filltable = () => {
-    return list?.map((item) => {
+    return list.filter((val)=>{
+      if(search===""){
+          return val 
+      }else if (val.subcode.toLowerCase().includes(search.toLowerCase())  ){
+          return val
+      }
+  }).map((item) => {
       return (
         <tr className="d-flex">
           <th scope="row" className="col-1">
@@ -39,6 +47,8 @@ const DisplayMidTerm1AttendanceDetail60 = () => {
     <div>
       <div className="container">
         <h4>Mid Term-1 Questions Attempted by students with more than 60% score</h4>
+        <input class="form-control search" type="text" placeholder="Search...." aria-label="Search a record" onChange={event=>{setSearch(event.target.value)}}></input>
+
         <table class="table table-hover table-dark">
           <thead>
             <tr className="d-flex">

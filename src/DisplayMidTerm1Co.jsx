@@ -4,24 +4,32 @@ import {getData,postData} from "./FetchNodeServices"
 const DisplayMidTerm1Co = () => {
 
     const [list,setList]=useState([])
+    const [search,setSearch]=useState("")
+
 
 
     const fetchAllmidterm1co=async()=>{
         var result = await getData("midterm1/displayallmidterm1_co")
         setList(result)
-        alert(JSON.stringify(result))
+        // alert(JSON.stringify(result))
 
         }
     
     useEffect(function(){
             fetchAllmidterm1co()
-            alert(1)
+            // alert(1)
     },[])
 
 
 
     const filltable =()=>{
-        return list.map((item) => {
+        return list.filter((val)=>{
+            if(search===""){
+                return val 
+            }else if (val.subcode.toLowerCase().includes(search.toLowerCase()) || val.co_of_q1a.toLowerCase().includes(search.toLowerCase()) || val.co_of_q1b.toLowerCase().includes(search.toLowerCase()) || val.co_of_q1c.toLowerCase().includes(search.toLowerCase()) || val.co_of_q1d.toLowerCase().includes(search.toLowerCase()) || val.co_of_q1e.toLowerCase().includes(search.toLowerCase()) || val.co_of_q2a.toLowerCase().includes(search.toLowerCase()) || val.co_of_q2b.toLowerCase().includes(search.toLowerCase()) || val.co_of_q2c.toLowerCase().includes(search.toLowerCase()) || val.co_of_q3.toLowerCase().includes(search.toLowerCase())|| val.co_of_q4.toLowerCase().includes(search.toLowerCase()) ){
+                return val
+            }
+        }).map((item) => {
             return (
                 <tr className='d-flex'>
                         <th scope="row" className='col-1'>{item.subcode}</th>
@@ -48,6 +56,8 @@ const DisplayMidTerm1Co = () => {
     return( <div>
          <div className='container'>
             <h4>Mid Term 1 CO Scheme</h4>
+            <input class="form-control search" type="text" placeholder="Search...." aria-label="Search a record" onChange={event=>{setSearch(event.target.value)}}></input>
+
             <table class="table table-hover table-dark">
                 <thead>
                     <tr className='d-flex'>

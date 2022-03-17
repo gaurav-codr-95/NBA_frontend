@@ -3,21 +3,29 @@ import {getData,postData} from "./FetchNodeServices"
 
 const DisplayActivityCo = () => {
     const [list,setList]=useState([])
+    const [search,setSearch]=useState("")
+
 
 
     const fetchAllActivity=async()=>{
         var result = await getData("activity/displayallactivity_co")
         setList(result)
-        alert(JSON.stringify(result))
+        // alert(JSON.stringify(result))
 
         }
     
     useEffect(function(){
             fetchAllActivity()
-            alert(1)
+            // alert(1)
     },[])
-    const filltable =()=>{
-        return list.map((item) => {
+    const filltable =()=>{ 
+        return list.filter((val)=>{
+        if(search===""){
+            return val 
+        }else if (val.subcode.toLowerCase().includes(search.toLowerCase()) || val.co_of_act1.toLowerCase().includes(search.toLowerCase()) || val.co_of_act2.toLowerCase().includes(search.toLowerCase()) || val.co_of_act3.toLowerCase().includes(search.toLowerCase()) || val.co_of_act4.toLowerCase().includes(search.toLowerCase()) ){
+            return val
+        }
+    }).map((item) => {
             return (
                 <tr className='d-flex'>
                             <th scope="row" className='col-2'>{item.subcode}</th>
@@ -32,6 +40,7 @@ const DisplayActivityCo = () => {
     }
     return( <div>
                    <div className='container'>
+                   <input class="form-control search" type="text" placeholder="Search...." aria-label="Search a record" onChange={event=>{setSearch(event.target.value)}}></input>
                 <h4>Mid Term-2 Marks</h4>
                 <table class="table table-hover table-dark">
                     <thead>

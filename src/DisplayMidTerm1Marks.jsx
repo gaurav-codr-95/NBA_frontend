@@ -3,11 +3,12 @@ import { getData, postData } from "./FetchNodeServices";
 
 const DisplayMidTerm1Marks = () => {
   const [list, setList] = useState([]);
+  const [search, setSearch] = useState("");
 
   const fetchAllStudent = async () => {
     const result = await getData("midterm1/displayallmidterm1_marks");
     setList(result);
-    alert(JSON.stringify(result));
+    // alert(JSON.stringify(result));
   };
 
   useEffect(function () {
@@ -15,32 +16,55 @@ const DisplayMidTerm1Marks = () => {
   }, []);
 
   const filltable = () => {
-    return list.map((item) => {
-      return (
-        <tr className="d-flex">
-          <th scope="row" className="col-1">
-            {item.subcode}
-          </th>
-          <td className="col-1">{item.rollno}</td>
-          <td className="col-1">{item.mark_of_q1a}</td>
-          <td className="col-1">{item.mark_of_q1b}</td>
-          <td className="col-1">{item.mark_of_q1c}</td>
-          <td className="col-1">{item.mark_of_q1d}</td>
-          <td className="col-1">{item.mark_of_q1e}</td>
-          <td className="col-1">{item.mark_of_q2a}</td>
-          <td className="col-1">{item.mark_of_q2b}</td>
-          <td className="col-1">{item.mark_of_q2c}</td>
-          <td className="col-1">{item.mark_of_q3}</td>
-          <td className="col-1">{item.mark_of_q4}</td>
-        </tr>
-      );
-    });
+    return list
+      .filter((val) => {
+        if (search === "") {
+          return val;
+        } else if (
+          val.subcode.toLowerCase().includes(search.toLowerCase()) ||
+          val.rollno.toLowerCase().includes(search.toLowerCase()) 
+          
+
+        ) {
+          return val;
+        }
+      })
+      .map((item) => {
+        return (
+          <tr className="d-flex">
+            <th scope="row" className="col-1">
+              {item.subcode}
+            </th>
+            <td className="col-1">{item.rollno}</td>
+            <td className="col-1">{item.mark_of_q1a}</td>
+            <td className="col-1">{item.mark_of_q1b}</td>
+            <td className="col-1">{item.mark_of_q1c}</td>
+            <td className="col-1">{item.mark_of_q1d}</td>
+            <td className="col-1">{item.mark_of_q1e}</td>
+            <td className="col-1">{item.mark_of_q2a}</td>
+            <td className="col-1">{item.mark_of_q2b}</td>
+            <td className="col-1">{item.mark_of_q2c}</td>
+            <td className="col-1">{item.mark_of_q3}</td>
+            <td className="col-1">{item.mark_of_q4}</td>
+          </tr>
+        );
+      });
   };
 
   return (
     <div>
       <div className="container">
         <h4>Mid Term-1 Marks</h4>
+        <input
+          class="form-control search"
+          type="text"
+          placeholder="Search...."
+          aria-label="Search a record"
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        ></input>
+
         <table class="table table-hover table-dark">
           <thead>
             <tr className="d-flex">
