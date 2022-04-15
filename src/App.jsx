@@ -30,6 +30,9 @@ import DisplayMidterm2Attendance from './DisplayMidterm2Attendance';
 import DisplayMidterm1AttendanceDetail from './DisplayMidterm1AttendanceDetail';
 import DisplayMidterm1AttendanceDetail60 from './DisplayMidterm1AttendanceDetail60';
 import DisplayActivityAttendance from './DisplayActivityAttendance';
+import DisplayPercentageMidterm1AttendanceDetail60 from './DisplayPercentageMidterm1AttendanceDetail60';
+import DisplayLevelMidtem1 from './DisplayLevelMidterm1';
+
 
 
 
@@ -268,6 +271,21 @@ function App(props) {
             history={props.history}
           />
 
+<Route
+            strict
+            exact
+            component={DisplayPercentageMidterm1AttendanceDetail60}
+            path="/displaypercentmidterm1attendancedetail60"
+            history={props.history}
+          />
+
+<Route
+            strict
+            exact
+            component={DisplayLevelMidtem1}
+            path="/displaylevelmidterm1"
+            history={props.history}
+          />
 
 
 

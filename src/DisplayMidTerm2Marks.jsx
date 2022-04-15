@@ -12,13 +12,13 @@ const DisplayMidTerm2Marks = () => {
     const fetchAllMidterm2marks=async()=>{
         var result = await getData("midterm2/displayallmidterm2_marks")
         setList(result)
-        alert(JSON.stringify(result))
+        // alert(JSON.stringify(result))
 
         }
     
     useEffect(function(){
             fetchAllMidterm2marks()
-            alert(1)
+            // alert(1)
     },[])
     const filltable =()=>{
         return list.filter((val)=>{

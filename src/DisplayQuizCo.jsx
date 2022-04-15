@@ -10,13 +10,13 @@ const DisplayQuizCo = () => {
     const fetchAllQuiz=async()=>{
         var result = await getData("quiz/displayallquiz_co")
         setList(result)
-        alert(JSON.stringify(result))
+        // alert(JSON.stringify(result))
 
         }
     
     useEffect(function(){
             fetchAllQuiz()
-            alert(1)
+            // alert(1)
     },[])
     const filltable =()=>{
         return list.filter((val)=>{

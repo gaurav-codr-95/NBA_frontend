@@ -30,6 +30,10 @@ import DisplayMidterm2Attendance from './DisplayMidterm2Attendance';
 import DisplayMidterm1AttendanceDetail from './DisplayMidterm1AttendanceDetail';
 import DisplayMidterm1AttendanceDetail60 from './DisplayMidterm1AttendanceDetail60';
 import DisplayActivityAttendance from './DisplayActivityAttendance';
+import DisplayPercentageMidterm1AttendanceDetail60 from './DisplayPercentageMidterm1AttendanceDetail60';
+import DisplayLevelMidtem1 from './DisplayLevelMidterm1';
+
+
 
 
 
@@ -162,6 +166,12 @@ export default function SideBar(props) {
               </li>
 
               <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayActivityAttendance />)}>
+                  Display Activity Attendance 
+                </a>
+              </li>
+
+              <li className="nav-item">
                 <a className="nav-link" href="#" onClick={() => handleClick(<DisplayMidterm1Attendance />)}>
                   Display Midterm1 Attendance
                 </a>
@@ -184,10 +194,18 @@ export default function SideBar(props) {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayActivityAttendance />)}>
-                  Display Activity Attendance 
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayPercentageMidterm1AttendanceDetail60 />)}>
+                  Display Percentage Midterm1 Attendance Detail 60%
                 </a>
               </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={() => handleClick(<DisplayLevelMidtem1 />)}>
+                  Display Level Midterm1 
+                </a>
+              </li>
+
+              
               
              
 
